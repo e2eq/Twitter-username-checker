@@ -16,10 +16,10 @@ A simple python tool to check if a username is available or not.
 
 To run it is simple:
     
-	- Open up your command line and type `python` 
+	- Open up your command line and type python
 	- drag the twitter_checker.py in to your command line
 	- drag the .txt file with your usernames in and that's it, hit enter
-	
+	- for example: python twitter_checker.py C:\xampp\htdocs\py\test.txt
 	
 # Requirements
 
