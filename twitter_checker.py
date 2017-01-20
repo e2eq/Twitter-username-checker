@@ -31,7 +31,7 @@ def checker():
             if check.status_code == 404:
                 message = '%s is avaialble\n' % username
             elif check.status_code == 400:
-                message = '%s is a bad formatted username. Alphanumeric only\n' % line.strip()
+                message = '%s is a bad formatted username. Alphanumeric only\n' % username
             else:
                 message = '%s is taken\n' % username
         else:
