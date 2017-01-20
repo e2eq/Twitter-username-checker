@@ -24,14 +24,17 @@ def checker():
     for line in lines:
         url = "https://twitter.com/" + line.strip()
         check = requests.get(url)
-
-        #a simple 404 will tell us it doesn't exist
-        if check.status_code == 404:
-            message = '%s is avaialble\n' % line.strip()
-        elif check.status_code == 400:
-            message = '%s is a bad formatted username. Alphanumeric only\n' % line.strip()
+        
+        if(line.strip().isalnum()):
+            #a simple 404 will tell us it doesn't exist
+            if check.status_code == 404:
+                message = '%s is avaialble\n' % line.strip()
+            elif check.status_code == 400:
+                message = '%s is a bad formatted username. Alphanumeric only\n' % line.strip()
+            else:
+                message = '%s is taken\n' % line.strip()
         else:
-            message = '%s is taken\n' % line.strip()
+            message = '%s is not a valid username\n' % line.strip()
 
         #save the results
         checked.write(message)
