@@ -23,4 +23,4 @@ To run it is simple:
 	
 # Requirements
 
-    requests
+    pip install requests
