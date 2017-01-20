@@ -22,19 +22,20 @@ def checker():
     usernames.close()
     checked = open("saved.txt", "a+")
     for line in lines:
-        url = "https://twitter.com/" + line.strip()
-        check = requests.get(url)
-        
-        if(line.strip().isalnum()):
+        username = line.strip()
+        if username.isalnum() and len(username) >= 4:
+
+            url = "https://twitter.com/" + username
+            check = requests.get(url)
             #a simple 404 will tell us it doesn't exist
             if check.status_code == 404:
-                message = '%s is avaialble\n' % line.strip()
+                message = '%s is avaialble\n' % username
             elif check.status_code == 400:
                 message = '%s is a bad formatted username. Alphanumeric only\n' % line.strip()
             else:
-                message = '%s is taken\n' % line.strip()
+                message = '%s is taken\n' % username
         else:
-            message = '%s is not a valid username\n' % line.strip()
+            message = '%s is not a valid username\n' % username
 
         #save the results
         checked.write(message)
