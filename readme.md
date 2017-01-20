@@ -5,7 +5,7 @@ A simple python tool to check if a username is available or not.
 
 # Usage:
 
-** Make sure you add each username per-line, do no use comma's, for example of a username list: **
+**Make sure you add each username per-line, do no use comma's, for example of a username list** 
 
     filtration
 	anotherusername
